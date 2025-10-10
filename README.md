@@ -15,6 +15,10 @@ The Calculator Plus app is a simple yet extensible calculator built in Python. I
 - **Division**: Divide one number by another with error handling for division by zero
 - **Square Root**: Calculate the square root of a number
 
+### Geometry Features (Latest)
+- **Circle Area Calculation**: Calculate the area of a circle using radius
+- **Rectangle Area Calculation**: Calculate the area of a rectangle using length and width
+
 ### Planned Features
 
 ## Installation & Usage
@@ -25,11 +29,19 @@ The Calculator Plus app is a simple yet extensible calculator built in Python. I
 
 ### Running the Application
 
+#### Basic Calculator
 ```bash
 python CalculatorPlus.py
 ```
 
+#### Geometry Calculator
+```bash
+python area.py
+```
+
 ### Example Output
+
+#### Calculator Output
 ```
 16 + 4 = 20
 16 - 4 = 12
@@ -38,8 +50,15 @@ python CalculatorPlus.py
 The square root of 25 = 5.0
 ```
 
+#### Geometry Calculator Output
+```
+The area of the circle with radius 5 = 78.53981633974483
+The area of the rectangle with length 10 and width 6 = 60
+```
+
 ## Code Structure
 
+### Calculator Class
 ```python
 class Calculator:
     def add(self, a, b):
@@ -58,6 +77,16 @@ class Calculator:
     
     def sqrt(self, x):
         return math.sqrt(x)
+```
+
+### GeometryCalculator Class
+```python
+class GeometryCalculator:
+    def calculate_circle_area(self, radius):
+        return math.pi * radius ** 2
+    
+    def calculate_rectangle_area(self, length, width):
+        return length * width
 ```
 
 ## Development Workflow & Release Process
@@ -123,7 +152,24 @@ f398d6b Initial commit
 
 ### Recent Development Updates (Post v1.0.0)
 
-After the v1.0.0 release, significant enhancements have been made on the `feature/sqrt` branch:
+After the v1.0.0 release, significant enhancements have been made on multiple feature branches:
+
+#### Latest Update: Geometry Calculator (feature/circle-area)
+
+**Latest Commit:**
+```
+2e90090 (HEAD -> feature/circle-area, origin/feature/circle-area) feat: add GeometryCalculator for area calculations of circle and rectangle
+```
+
+**New Features Added:**
+1. **GeometryCalculator Class** - A new class dedicated to geometry calculations
+2. **Circle Area Calculation** - Calculate area using π × radius²
+3. **Rectangle Area Calculation** - Calculate area using length × width
+4. **Interactive Examples** - Demonstrative calculations with sample values
+
+#### Previous Updates: Square Root Feature (feature/sqrt)
+
+Significant enhancements were made on the `feature/sqrt` branch:
 
 #### Feature Branch: `feature/sqrt`
 
@@ -159,9 +205,11 @@ fcc1ea9 fix: fixed divide error if denominator is 0 to raise value error
 
 ### Upcoming Features
 1. **Extended Operations**: Power, logarithm, trigonometric functions
-2. **User Interface**: Interactive CLI or GUI interface
-3. **Input Validation**: Validate user inputs for mathematical operations
-4. **Scientific Calculator Mode**: Advanced mathematical functions and constants
+2. **More Geometric Shapes**: Triangle, trapezoid, ellipse area calculations
+3. **Volume Calculations**: Sphere, cylinder, cube volume calculations
+4. **User Interface**: Interactive CLI or GUI interface
+5. **Input Validation**: Validate user inputs for mathematical operations
+6. **Scientific Calculator Mode**: Advanced mathematical functions and constants
 
 ### Contributing
 
@@ -194,6 +242,7 @@ git push origin feature/your-feature-name
 ```
 git_assignment_HeroVired/
 ├── CalculatorPlus.py    # Main calculator application
+├── area.py             # Geometry calculator for area calculations
 ├── README.md           # Project documentation
 └── .git/              # Git version control
 ```
