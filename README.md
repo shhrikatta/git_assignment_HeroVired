@@ -12,10 +12,10 @@ The Calculator Plus app is a simple yet extensible calculator built in Python. I
 - **Addition**: Add two numbers
 - **Subtraction**: Subtract one number from another
 - **Multiplication**: Multiply two numbers
-- **Division**: Divide one number by another
+- **Division**: Divide one number by another with error handling for division by zero
+- **Square Root**: Calculate the square root of a number
 
 ### Planned Features
-- **Square Root**: Calculate the square root of a number (implementation ready, commented out)
 
 ## Installation & Usage
 
@@ -35,6 +35,7 @@ python CalculatorPlus.py
 16 - 4 = 12
 16 * 4 = 64
 16 / 4 = 4.0
+The square root of 25 = 5.0
 ```
 
 ## Code Structure
@@ -51,11 +52,12 @@ class Calculator:
         return a * b
     
     def divide(self, a, b):
+        if b == 0:
+            raise ValueError("Cannot divide by zero.")
         return a / b
     
-    # Future feature - Square root (commented out)
-    # def square_root(self, x):
-    #     return math.sqrt(x)
+    def sqrt(self, x):
+        return math.sqrt(x)
 ```
 
 ## Development Workflow & Release Process
@@ -119,13 +121,47 @@ b8bdb29 (HEAD -> main, tag: v1.0.0, origin/main, dev) Add Calculator Plus app wi
 f398d6b Initial commit
 ```
 
+### Recent Development Updates (Post v1.0.0)
+
+After the v1.0.0 release, significant enhancements have been made on the `feature/sqrt` branch:
+
+#### Feature Branch: `feature/sqrt`
+
+**Commit History:**
+```
+a76f65c (HEAD -> feature/sqrt, origin/feature/sqrt) fix: fixed format issues
+fcc1ea9 fix: fixed divide error if denominator is 0 to raise value error
+4038685 feat: added square root log implementation
+```
+
+#### New Features Implemented:
+
+1. **Square Root Functionality** (Commit: `4038685`)
+   - Implemented the `sqrt()` method using `math.sqrt()`
+   - Added square root calculation to the example output
+   - Feature is now fully functional and tested
+
+2. **Division by Zero Error Handling** (Commit: `fcc1ea9`)
+   - Enhanced the `divide()` method with proper error handling
+   - Raises `ValueError` when attempting to divide by zero
+   - Improves application stability and user experience
+
+3. **Code Formatting Improvements** (Commit: `a76f65c`)
+   - Fixed formatting issues in the codebase
+   - Improved code readability and consistency
+
+#### Current Status:
+- These features are ready for integration into the main branch
+- All planned v1.1.0 features have been successfully implemented
+- The feature branch is ahead of main by 3 commits
+
 ## Future Development
 
 ### Upcoming Features
-1. **Square Root Functionality**: Uncomment and test the `square_root` method
-2. **Error Handling**: Add proper exception handling for division by zero
-3. **Extended Operations**: Power, logarithm, trigonometric functions
-4. **User Interface**: Interactive CLI or GUI interface
+1. **Extended Operations**: Power, logarithm, trigonometric functions
+2. **User Interface**: Interactive CLI or GUI interface
+3. **Input Validation**: Validate user inputs for mathematical operations
+4. **Scientific Calculator Mode**: Advanced mathematical functions and constants
 
 ### Contributing
 
