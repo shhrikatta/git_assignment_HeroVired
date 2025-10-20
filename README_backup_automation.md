@@ -276,14 +276,12 @@ Add to cron jobs:
 0 0 * * 2 /path/to/apache_backup.sh | mail -s "Apache Backup Status" admin@example.com
 ```
 
-## 📞 Support
-
-For issues or questions:
-1. Check log files for detailed error messages
-2. Verify file permissions and paths
-3. Ensure sufficient disk space
-4. Test scripts manually before relying on cron execution
-
 ---
 
-**Note**: Always test backup and recovery procedures in a non-production environment before implementing in production systems.
+## Screenshots
+
+### Web server backing up Script
+
+#### Cronjob scheduled for apache and nginx
+
+![Web server backup](screenshots/web_server_backup.png)
