@@ -85,7 +85,7 @@ install_monitoring_tools() {
             sudo apt-get install -y htop nmon
         elif command_exists yum; then
             # RHEL/CentOS
-            sudo yum install -y htop nmon
+            sudo yum install -y htop nmon bc
         elif command_exists dnf; then
             # Fedora
             sudo dnf install -y htop nmon

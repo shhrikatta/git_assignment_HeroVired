@@ -347,19 +347,25 @@ Run with debug output for troubleshooting:
 sudo bash -x ./setup_developer_accounts.sh
 ```
 
-## Integration with System Monitoring
+## Screenshots
 
-This script complements the system monitoring capabilities by:
-- Creating secure user environments that can be monitored
-- Establishing proper user isolation for security auditing
-- Providing structured workspaces for development activity tracking
+### System Monitoring Script
+
+#### System Report Generation
+*Example of comprehensive system report showing CPU, memory, and disk usage*
+
+![System Report](screenshots/system_report.png)
+
+#### Real-time Monitoring Dashboard
+*Live system monitoring with resource usage graphs and alerts*
+
+![Monitoring Dashboard](screenshots/monitoring_dashboard.png)
+
+### Developer Account Setup Script
+
+#### Interactive Account Creation
+*Interactive prompts for creating developer accounts with validation*
+
+![Account Setup](screenshots/account_setup.png)
 
 ---
-
-## Contributing
-
-Contributions are welcome. Please ensure:
-- Cross-platform compatibility
-- Proper error handling
-- Updated documentation
-- Test on both macOS and Linux systems
